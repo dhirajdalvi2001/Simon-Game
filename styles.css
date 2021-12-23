@@ -90,7 +90,7 @@ footer {
   font-family: 'Indie Flower', cursive;
 }
 
-@media screen and (max-width: 500px) {
+@media (max-width: 500px) and (min-width: 270px) {
 
   #level-title {
     display: none;
