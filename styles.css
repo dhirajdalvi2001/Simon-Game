@@ -5,14 +5,24 @@ body {
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 2.3rem;
+  font-size: 2.2rem;
+  line-height: 3.5rem;
+  margin:  2%;
+  color: #FEF2BF;
+}
+
+#level-mobile {
+  display: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2.2rem;
+  line-height: 3.5rem;
   margin:  2%;
   color: #FEF2BF;
 }
 
 .container {
   display: block;
-  width: 50%;
+  width: 100%;
   margin: auto;
 }
 
@@ -23,18 +33,22 @@ body {
 
 h2 {
   font-family: 'Press Start 2P', cursive;
-  font-size: 1.5rem;
-  margin:  5%;
+  font-size: 1.3rem;
+  margin:  2%;
   color: #FEF2BF;
 }
 
 .btn {
   margin: 20px;
   display: inline-block;
-  height: 170px;
-  width: 170px;
+  height: 160px;
+  width: 160px;
   border: 5px solid black;
   border-radius: 20%;
+}
+
+.start-button {
+  visibility: hidden;
 }
 
 .game-over {
@@ -70,8 +84,47 @@ a {
 }
 
 footer {
-  margin-top: 3%;
+  margin-top: 1%;
   color: #EEEEEE;
   text-align: center;
   font-family: 'Indie Flower', cursive;
+}
+
+@media screen and (max-width: 500px) {
+
+  #level-title {
+    display: none;
+  }
+
+  #level-mobile {
+    display: inline-block;
+  }
+
+  .high-score {
+    margin: 20px;
+  }
+  
+  .btn {
+    margin: 5px;
+    height: 30vw;
+    width: 30vw;
+  }
+
+  .start-button {
+    display: flex;
+    margin: 50px auto;
+    visibility: visible;
+    height: 10vw;
+    width: 50vw;
+    background-color: orange;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+
+  .start {
+    margin: auto;
+    font-size: 1.3rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #FEF2BF;
+  }
 }

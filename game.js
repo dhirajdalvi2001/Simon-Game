@@ -3,13 +3,27 @@ var gamePattern = [];
 var userClickedPattern =[];
 var started = false;
 var level = 0;
-var allScores = [];
+var allScores = [0];
 
 $(document).keypress(function () {
     if (!started) {
         $("#level-title").text("Level " + level);
+        $("#level-mobile").text("Level " + level);
         nextSequence();
         started = true;
+    }
+});
+
+$("#start").click(function () {
+    if (!started) {
+        $("#level-mobile").text("Level " + level);
+        $("#start").text("Start");
+        nextSequence();
+        started = true;
+        $("#start").addClass("pressed");
+        setTimeout(function () {
+            $("#start").removeClass("pressed");
+        }, 100);
     }
 });
 
@@ -34,6 +48,8 @@ function checkAnswer(currentLevel) {
         playSound("wrong");
         $("body").addClass("game-over");
         $("#level-title").text("Game Over, Press Any Key To Restart");
+        $("#level-mobile").text("Game Over!");
+        $("#start").text("Restart");
         setTimeout(function () {
             $("body").removeClass("game-over");
         }, 200)
